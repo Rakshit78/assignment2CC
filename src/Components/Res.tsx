@@ -1,5 +1,4 @@
 import { PieChart } from 'react-minimal-pie-chart';
-import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 type Props = {
   ans1: string;

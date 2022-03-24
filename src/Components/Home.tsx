@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import { FormControlLabel, RadioGroup } from '@mui/material';
 import { Radio } from '@mui/material';
 import { TextField } from '@mui/material';
+import { useState } from 'react';
 
 type Props = {
   setsubject: any;
@@ -11,6 +12,7 @@ type Props = {
   setnavvisible: any;
 };
 export default function Home(props: Props) {
+  const [disable, setdisable] = useState(true);
   return (
     <div
       style={{
@@ -40,6 +42,10 @@ export default function Home(props: Props) {
           value={props.user}
           onChange={(e) => {
             props.setuser(e.target.value);
+            setdisable(false);
+            if (e.target.value.length === 0) {
+              setdisable(true);
+            }
           }}
         />
         <br />
@@ -106,6 +112,7 @@ export default function Home(props: Props) {
         <Button
           type='submit'
           variant='contained'
+          disabled={disable}
           onClick={() => {
             props.setnavvisible(true);
             props.navigate('./q1');
