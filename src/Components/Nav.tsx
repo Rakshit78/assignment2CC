@@ -1,5 +1,8 @@
 import Button from '@mui/material/Button';
-export default function Nav() {
+type Props = {
+  navigate: any;
+};
+export default function Nav(props: Props) {
   return (
     <div
       style={{
@@ -9,11 +12,21 @@ export default function Nav() {
         marginTop: '10px',
       }}
     >
-      <Button variant='contained'>1</Button>
-      <Button variant='contained'>2</Button>
-      <Button variant='contained'>3</Button>
-      <Button variant='contained'>4</Button>
-      <Button variant='contained'>5</Button>
+      <Button variant='contained' onClick={() => props.navigate('/q1')}>
+        1
+      </Button>
+      <Button variant='contained' onClick={() => props.navigate('/q2')}>
+        2
+      </Button>
+      <Button variant='contained' onClick={() => props.navigate('/q3')}>
+        3
+      </Button>
+      <Button variant='contained' onClick={() => props.navigate('/q4')}>
+        4
+      </Button>
+      <Button variant='contained' onClick={() => props.navigate('/q5')}>
+        5
+      </Button>
     </div>
   );
 }

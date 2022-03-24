@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className='App'>
-      {navvisible ? <Nav /> : null}
+      {navvisible ? <Nav navigate={navigate} /> : null}
       <Routes>
         <Route
           path='/'
