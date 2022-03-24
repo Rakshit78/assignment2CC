@@ -1,13 +1,15 @@
 import Button from '@mui/material/Button';
+import { useState } from 'react';
 type Props = {
   navigate: any;
   question: any;
   setans5: any;
   marks: number;
-  calculatemarks: any;
   setnavvisible: any;
+  setmarks: any;
 };
 export default function Qes5(props: Props) {
+  const [flag, setflag] = useState(false);
   return (
     <div style={{ display: 'grid', placeItems: 'center' }}>
       <div>
@@ -42,7 +44,15 @@ export default function Qes5(props: Props) {
       <Button
         variant='contained'
         onClick={() => {
-          props.calculatemarks();
+          if (flag) {
+            props.setmarks(props.marks - 1);
+            setflag(false);
+          }
+          if (props.setans5 === props.question.ans5) {
+            props.setmarks(props.marks + 1);
+            setflag(true);
+          }
+          //====
           props.setnavvisible(false);
           props.navigate('/res');
         }}

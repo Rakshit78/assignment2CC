@@ -27,8 +27,8 @@ export default function Res(props: Props) {
 
         <PieChart
           data={[
-            { title: 'yoyrmarks', value: 10, color: '#d5d5d5' },
-            { title: 'totalmarks', value: 15, color: '#C13C37' },
+            { title: 'yoyrmarks', value: props.marks, color: '#C13C37' },
+            { title: 'totalmarks', value: 5, color: '#e5e5e5' },
           ]}
           style={{ width: '200px' }}
         />

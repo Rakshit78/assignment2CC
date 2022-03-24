@@ -43,20 +43,6 @@ function App() {
     selectedsubject();
   }, []);
 
-  const calculatemarks = () => {
-    if (ans1 === question.ans1) {
-      setmarks(marks + 1);
-    } else if (ans2 === question.ans2) {
-      setmarks(marks + 1);
-    } else if (ans3.a === question.ans3.ans1) {
-      setmarks(marks + 1);
-    } else if (ans4.a === question.ans4) {
-      setmarks(marks + 1);
-    } else if (ans5 === question.ans5) {
-      setmarks(marks + 1);
-    }
-  };
-
   return (
     <div className='App'>
       {navvisible ? <Nav navigate={navigate} /> : null}
@@ -81,23 +67,49 @@ function App() {
               navigate={navigate}
               user={user}
               setans1={setans1}
+              setmarks={setmarks}
+              ans1={ans1}
+              marks={marks}
             />
           }
         />
         <Route
           path='/q2'
           element={
-            <Qes2 question={question} navigate={navigate} setans2={setans2} />
+            <Qes2
+              question={question}
+              navigate={navigate}
+              setans2={setans2}
+              ans2={ans2}
+              marks={marks}
+              setmarks={setmarks}
+            />
           }
         />
 
         <Route
           path='/q3'
-          element={<Qes3 question={question} navigate={navigate} ans3={ans3} />}
+          element={
+            <Qes3
+              question={question}
+              navigate={navigate}
+              ans3={ans3}
+              marks={marks}
+              setmarks={setmarks}
+            />
+          }
         />
         <Route
           path='/q4'
-          element={<Qes4 question={question} navigate={navigate} ans4={ans4} />}
+          element={
+            <Qes4
+              question={question}
+              navigate={navigate}
+              ans4={ans4}
+              marks={marks}
+              setmarks={setmarks}
+            />
+          }
         />
         <Route
           path='/q5'
@@ -107,8 +119,8 @@ function App() {
               navigate={navigate}
               setans5={setans5}
               marks={marks}
-              calculatemarks={calculatemarks}
               setnavvisible={setnavvisible}
+              setmarks={setmarks}
             />
           }
         />

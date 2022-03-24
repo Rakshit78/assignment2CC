@@ -1,12 +1,17 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useState } from 'react';
 type Props = {
   navigate: any;
   question: any;
   user: string;
   setans1: any;
+  ans1: any;
+  setmarks: any;
+  marks: number;
 };
 export default function Qes1(props: Props) {
+  const [flag, setflag] = useState(false);
   return (
     <div style={{ display: 'grid', placeItems: 'center' }}>
       <div>
@@ -20,7 +25,20 @@ export default function Qes1(props: Props) {
         <br />
         <br />
 
-        <Button variant='contained' onClick={() => props.navigate('/q2')}>
+        <Button
+          variant='contained'
+          onClick={() => {
+            if (flag) {
+              props.setmarks(props.marks - 1);
+              setflag(false);
+            }
+            if (props.question.ans1 === props.ans1) {
+              props.setmarks(props.marks + 1);
+              setflag(true);
+            }
+            props.navigate('/q2');
+          }}
+        >
           next
         </Button>
       </div>
