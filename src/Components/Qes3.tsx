@@ -6,6 +6,7 @@ type Props = {
   ans3: any;
   marks: number;
   setmarks: any;
+  setans3: any;
 };
 export default function Qes3(props: Props) {
   const [flag, setflag] = useState(false);
@@ -18,7 +19,7 @@ export default function Qes3(props: Props) {
           type='checkbox'
           value='yes'
           onChange={(e) => {
-            props.ans3.a = e.target.value;
+            props.setans3({ a: e.target.value, b: props.ans3.b });
           }}
           name='select'
         />
@@ -27,7 +28,7 @@ export default function Qes3(props: Props) {
           type='checkbox'
           value='no'
           onChange={(e) => {
-            props.ans3.a = e.target.value;
+            props.setans3({ a: props.ans3.a, b: props.ans3.b });
           }}
           name='select'
         />
@@ -36,7 +37,7 @@ export default function Qes3(props: Props) {
           type='checkbox'
           value='no'
           onChange={(e) => {
-            props.ans3.b = e.target.value;
+            props.setans3({ a: e.target.value, b: '' });
           }}
           name='select'
         />
@@ -45,7 +46,7 @@ export default function Qes3(props: Props) {
           type='checkbox'
           value='yes'
           onChange={(e) => {
-            props.ans3.b = e.target.value;
+            props.setans3({ a: props.ans3.a, b: e.target.value });
           }}
           name='select'
         />

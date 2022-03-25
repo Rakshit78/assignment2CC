@@ -86,6 +86,7 @@ function App() {
               question={question}
               navigate={navigate}
               ans3={ans3}
+              setans3={setans3}
               marks={marks}
               setmarks={setmarks}
             />
@@ -100,6 +101,7 @@ function App() {
               ans4={ans4}
               marks={marks}
               setmarks={setmarks}
+              setans4={setans4}
             />
           }
         />

@@ -5,6 +5,7 @@ type Props = {
   question: any;
   navigate: any;
   ans4: any;
+  setans4: any;
   marks: number;
   setmarks: any;
 };
@@ -21,19 +22,37 @@ export default function Qes4(props: Props) {
         <br />
         <TextField
           variant='outlined'
-          onChange={(e) => (props.ans4.a = e.target.value)}
+          onChange={(e) =>
+            props.setans4({ a: e.target.value, b: '', c: '', d: '' })
+          }
         />
         <TextField
           variant='outlined'
-          onChange={(e) => (props.ans4.b = e.target.value)}
+          onChange={(e) =>
+            props.setans4({ a: props.ans4.a, b: e.target.value, c: '', d: '' })
+          }
         />
         <TextField
           variant='outlined'
-          onChange={(e) => (props.ans4.c = e.target.value)}
+          onChange={(e) =>
+            props.setans4({
+              a: props.ans4.a,
+              b: props.ans4.b,
+              c: e.target.value,
+              d: '',
+            })
+          }
         />
         <TextField
           variant='outlined'
-          onChange={(e) => (props.ans4.d = e.target.value)}
+          onChange={(e) =>
+            props.setans4({
+              a: props.ans4.a,
+              b: props.ans4.b,
+              c: props.ans4.c,
+              d: e.target.value,
+            })
+          }
         />
         <br />
         <br />
