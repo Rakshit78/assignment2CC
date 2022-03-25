@@ -19,9 +19,10 @@ function App() {
   const [ans2, setans2] = useState('');
   const [ans5, setans5] = useState('');
   const [navvisible, setnavvisible] = useState(false);
+  const [ans3, setans3] = useState({ a: '', b: '' });
+  const [ans4, setans4] = useState({ a: '', b: '', c: '', d: '' });
   const [question, setquestions] = useState(obj);
   const [marks, setmarks] = useState(0);
-
   const selectedsubject = () => {
     if (subject === 'Englist') {
       setquestions(obj1);
@@ -29,16 +30,7 @@ function App() {
       setquestions(obj2);
     }
   };
-  let ans3: any = {
-    a: '',
-    b: '',
-  };
-  let ans4: any = {
-    a: '',
-    b: '',
-    c: '',
-    d: '',
-  };
+
   useEffect(() => {
     selectedsubject();
   }, []);

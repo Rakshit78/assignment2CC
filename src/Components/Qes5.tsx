@@ -52,7 +52,7 @@ export default function Qes5(props: Props) {
             props.setmarks(props.marks + 1);
             setflag(true);
           }
-          //====
+
           props.setnavvisible(false);
           props.navigate('/res');
         }}
