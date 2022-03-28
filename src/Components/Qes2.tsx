@@ -1,5 +1,7 @@
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import { RadioGroup, Radio } from '@mui/material';
+import FormLabelControl from '@mui/material/FormControlLabel';
 type Props = {
   navigate: any;
   question: any;
@@ -15,20 +17,18 @@ export default function Qes2(props: Props) {
     <div style={{ display: 'grid', placeItems: 'center' }}>
       <div>
         <h1>{props.question.ques2}</h1>
-        True:
-        <input
-          type='radio'
-          name='select'
-          value='yes'
-          onChange={(e) => props.setans2(e.target.value)}
-        />
-        False:
-        <input
-          type='radio'
-          name='select'
-          value='no'
-          onChange={(e) => props.setans2(e.target.value)}
-        />
+        <RadioGroup>
+          <FormLabelControl
+            label='True'
+            control={<Radio onChange={(e) => props.setans2(e.target.value)} />}
+            value='yes'
+          />
+          <FormLabelControl
+            label='False'
+            control={<Radio onChange={(e) => props.setans2(e.target.value)} />}
+            value='no'
+          />
+        </RadioGroup>
         <br />
         <br />
         <Button variant='contained' onClick={() => props.navigate('/q1')}>

@@ -103,7 +103,7 @@ export default function Home(props: Props) {
                 }}
               />
             }
-            label='Englist'
+            label='English'
             name='subject'
           />
         </RadioGroup>
