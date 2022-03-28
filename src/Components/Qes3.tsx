@@ -1,5 +1,7 @@
 import Button from '@mui/material/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import FormControllable from '@mui/material/FormControlLabel';
+import CheckBox from '@mui/material/Checkbox';
 type Props = {
   question: any;
   navigate: any;
@@ -10,46 +12,60 @@ type Props = {
 };
 export default function Qes3(props: Props) {
   const [flag, setflag] = useState(false);
+  useEffect(() => {}, [props.ans3]);
   return (
     <div style={{ display: 'grid', placeItems: 'center' }}>
       <div>
         <h1>{props.question.ques3}</h1>
-        abcd:
-        <input
-          type='checkbox'
+        <FormControllable
+          label='abcd:'
+          control={
+            <CheckBox
+              onChange={(e) => {
+                props.setans3({ a: e.target.value, b: props.ans3.b });
+                console.log(props.ans3);
+              }}
+            />
+          }
           value='yes'
-          onChange={(e) => {
-            props.setans3({ a: e.target.value, b: props.ans3.b });
-          }}
-          name='select'
         />
-        xyz:
-        <input
-          type='checkbox'
+        <FormControllable
+          label='xyz:'
+          control={
+            <CheckBox
+              onChange={(e) => {
+                props.setans3({ a: e.target.value, b: props.ans3.b });
+                console.log(props.ans3);
+              }}
+            />
+          }
           value='no'
-          onChange={(e) => {
-            props.setans3({ a: props.ans3.a, b: props.ans3.b });
-          }}
-          name='select'
         />
-        BHA:
-        <input
-          type='checkbox'
-          value='no'
-          onChange={(e) => {
-            props.setans3({ a: e.target.value, b: '' });
-          }}
-          name='select'
-        />
-        KAR:
-        <input
-          type='checkbox'
+        <FormControllable
+          label='xyz:'
+          control={
+            <CheckBox
+              onChange={(e) => {
+                props.setans3({ a: props.ans3.a, b: e.target.value });
+                console.log(props.ans3);
+              }}
+            />
+          }
           value='yes'
-          onChange={(e) => {
-            props.setans3({ a: props.ans3.a, b: e.target.value });
-          }}
-          name='select'
         />
+        <FormControllable
+          label='xyz:'
+          control={
+            <CheckBox
+              onChange={(e) => {
+                props.setans3({ a: e.target.value, b: props.ans3.b });
+                console.log(props.ans3);
+              }}
+            />
+          }
+          value='no'
+        />
+
         <br />
         <br />
         <Button variant='contained' onClick={() => props.navigate('/q2')}>

@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { FormControlLabel, RadioGroup } from '@mui/material';
+import { FormControl, FormControlLabel, RadioGroup } from '@mui/material';
 import { Radio } from '@mui/material';
 import { TextField } from '@mui/material';
 import { useState } from 'react';
@@ -53,9 +53,9 @@ export default function Home(props: Props) {
         <h5>Gender</h5>
         <RadioGroup>
           <FormControlLabel
-            value='female'
+            value='Female'
             control={<Radio />}
-            label='female'
+            label='Female'
             name='gender'
           />
           <FormControlLabel
